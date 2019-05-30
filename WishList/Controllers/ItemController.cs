@@ -17,11 +17,17 @@ namespace WishList.Controllers
             _context = applicationDbContext;
         }
 
-        [HttpGet]
+     
         public ActionResult Index()
         {
             var model = _context.Items.ToList();
             return View("Index", model);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View("Create");
         }
 
         [HttpPost]
